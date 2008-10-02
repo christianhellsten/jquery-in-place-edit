@@ -19,8 +19,8 @@ Inside the head tag, first include the jQuery JavaScript file then the jQuery in
 
 <pre>
   <code>
-    &lt;script type="text/javascript" src="javascripts/jquery.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript" src="javascripts/jquery.in-place-edit.js"&gt;&lt;/script&gt;
+    <script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.in-place-edit.js"></script>
   </code>
 </pre>
 
@@ -30,7 +30,7 @@ Add the following styles to your CSS file; you can change them later:
 
 <pre>
   </code>
-    &lt;style type="text/css"&gt;
+    <style type="text/css">
       ul.in-place-edit { list-style: none; margin-left: 0; }
         ul.in-place-edit li { width: 150px; margin: 0px; padding: 3px; }
 
@@ -47,7 +47,7 @@ Add the following styles to your CSS file; you can change them later:
         font-size: 10px;
       }
       
-    &lt;/style&gt;
+    </style>
   </code>
 </pre>
 
@@ -67,9 +67,9 @@ In this example we'll use a paragraph:
 
 <pre>
   <code>
-      &lt;div class="in-place-edit"&gt;
-        &lt;p id="item-1"&gt;Do the dishes&lt;/p&gt;
-      &lt;/div&gt;
+      <div class="in-place-edit">
+        <p id="item-1">Do the dishes</p>
+      </div>
   </code>
 </pre>
 
