@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+  "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Basic example of how to use the jQuery in-place-edit plugin</title>
+
+		<script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.in-place-edit.js"></script>
+
+    <style type="text/css">
+      ul.in-place-edit { list-style: none; margin-left: 0; }
+        ul.in-place-edit li { width: 150px; margin: 0px; padding: 3px; }
+
+        ul.in-place-edit .field {
+          width: 99%;
+        }
+
+        
+      .hover { background: #727EA3; color: #FFF; }
+      .editing { background: white; border-top: 5px solid #ccc; }
+      .disabled { background: none; color: black; }
+
+      .buttons input {
+        font-size: 10px;
+      }
+    </style>
+    
+  </head>
+<body>
+
+  <script type="text/javascript">
+    var submit_handler = function(element, id, value) {
+        alert("Edited id '" + id + "' value '" + value + "'");
+        return true;
+    };
+
+    var cancel_handler = function(element) {
+        // Nothing
+        return true;
+    };
+
+    // Enable in-place-edit when document is loaded
+    $(document).ready(function(){
+
+      $(".in-place-edit").children().inPlaceEdit({
+        submit : submit_handler,
+        cancel : cancel_handler
+      });            
+    });
+  </script>
+  You should be able to click on the text below and edit it. If you click save you should see a dialog box:
+  
+  <div class="in-place-edit">
+    <p id="item-1">Do the dishes</p>
+  </div>
+
+</body>
+</html>

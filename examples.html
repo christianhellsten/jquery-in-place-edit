@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+  "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>jQuery in-place-edit Plugin Examples</title>
+
+		<script type="text/javascript" src="javascripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.in-place-edit.js"></script>
+    <script type="text/javascript" src="javascripts/application.js"></script>
+      
+    <link rel="stylesheet" href="stylesheets/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="stylesheets/blueprint/print.css" type="text/css" media="print">    
+    <link rel="stylesheet" href="stylesheets/application.css" type="text/css" media="screen, projection">    
+
+  </head>
+<body>
+  <div class="container">
+      <h1>jQuery in-place-edit Plugin Examples</h1>
+      
+      <h2><a name="examples">Examples</a></h2>
+      
+      <p>The following section contains examples of how to add in-place-editing to the following HTML elements:</p>
+      <ul>
+        <li>Textarea</li>
+        <li>Paragraph</li>
+        <li>Select</li>
+        <li>Lists</li>
+      </ul>
+      
+      <p id="info">Tip: hover over and click on the in-place-edit fields below.</p>
+
+      <h3>Textarea</h3>
+      
+      <div class="custom-in-place-edit textarea">
+        <p id="item-1">Feed the dog</p>
+      </div>
+
+      <h3>Paragraph</h3>
+      
+      <div class="in-place-edit">
+        <p id="item-1">Do the dishes</p>
+      </div>
+      
+      <h3>Select</h3>
+      
+      <div class="custom-in-place-edit select">
+        <p id="item-1">Feed the cat</p>
+      </div>
+
+      <h3>List</h3>
+      <ul class="in-place-edit">
+        <li id="item-1">Feed granny</li>
+        <li id="item-2">Feed the kids</li>
+        <li id="item-3">Feed the lama</li>
+        <li id="item-4">Water the cactus</li>
+      </ul>
+
+      <hr class="space"/>
+
+      <h2><a name="advanced-examples">Advanced Examples</a></h2>
+      
+      <p>You might also be interested in how to accomplish the following things:</p>
+      
+      <ul>
+        <li>How to use DOM elements as form templates</li>
+        <li>How to disable fields (and enable) with JavaScript</li>
+        <li>How to add fields dynamically with JavaScript</li>
+      </ul>
+
+      
+      <h3>How to use DOM elements as form templates</h3>
+      
+      <div id="custom-template">Eat cockroaches</div>
+      
+      <div id="form-template" style="display:none">
+        <!-- start form -->
+        <div class="in-place-edit">
+          <h4>This example uses a DOM element as form template</h4>
+          <textarea type="text" class="field"></textarea>
+          <div class="buttons">
+            <input type="button" value="Save" class="save-button" />
+            <input type="button" value="Cancel" class="cancel-button" />
+          </div>
+        </div>
+        <!-- end form -->
+      </div>
+      
+      <hr class="space"/>
+      
+      <h3>How to disable fields (and enable) with JavaScript</h3>
+      
+      <div class="in-place-edit">
+        <p id="enable-disable">Buy coke</p>
+      </div>
+      
+      <p>
+      <a href="#" onclick="return enable()">Enable</a> | <a href="#" onclick="return disable()">Disable</a>
+      </p>
+      
+      <script type="text/javascript">
+        function enable() {
+          $("#enable-disable").removeClass('disabled');
+          return false;
+        }
+        
+        function disable() {
+          $("#enable-disable").addClass('disabled');
+          return false;
+        }
+      </script>
+
+      <h3>How to add fields dynamically with JavaScript</h3>
+          
+      <ul class="in-place-edit" id="dynamic-add">
+        <li id="item-1">Eat liver</li>
+      </ul>
+      
+      <p>
+        <a href="#" onclick="return add()">Add</a>
+      </p>
+      
+      <script type="text/javascript">
+        var index = 0;
+        
+        function add() {
+          $('#dynamic-add').prepend('<li id="category-new-' + index + '">Type name here...</li>');
+          
+          var new_element = $("#category-new-" + index);
+          new_element.inPlaceEdit({
+            submit : submit_handler,
+            cancel : cancel_handler
+          });
+          
+          new_element.click();
+          
+          new_element.find('.field').focus();
+          new_element.find('.field').select();
+          
+          index = index + 1;
+          
+          return false;
+        }
+      </script>
+  </div>
+  
+
+</body>
+</html>

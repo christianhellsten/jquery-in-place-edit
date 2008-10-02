@@ -1,0 +1,23 @@
+
+ul.in-place-edit { list-style: none; margin-left: 0; }
+  ul.in-place-edit li { width: 150px; margin: 0px; padding: 3px; }
+
+  .in-place-edit .field {
+    width: 99%;
+  }
+
+
+.hover { background: #727EA3; color: #FFF; }
+.editing { background: white; border-top: 5px solid #ccc; }
+.disabled { background: none; color: black; }
+.buttons input {
+  font-size: 10px;
+}
+
+#info {
+  color: #00aa00;
+}
+
+.underline {
+  text-decoration: underline;
+}

@@ -1,0 +1,117 @@
+h1. Introducing the jQuery in-place-edit Plugin
+
+h2. Introduction
+
+The jquery-in-place-edit plugin is a lightweight and customizable jQuery extension that allows you to easily add in-place editing functionality to your web applications.
+
+
+h3. Features
+
+* Templates that allow you to customize the look and feel.
+* Callbacks that allow you to add and change the default behavior.
+* Lightweight and easy to understand: allows you to modify it to fit your needs.
+
+.h2 Installation
+
+.h3 JavaScript
+
+Inside the head tag, first include the jQuery JavaScript file then the jQuery in-place-edit file:
+
+<pre>
+  <code>
+    &lt;script type="text/javascript" src="javascripts/jquery.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="javascripts/jquery.in-place-edit.js"&gt;&lt;/script&gt;
+  </code>
+</pre>
+
+.h3 CSS
+
+Add the following styles to your CSS file; you can change them later:
+
+<pre>
+  </code>
+    &lt;style type="text/css"&gt;
+      ul.in-place-edit { list-style: none; margin-left: 0; }
+        ul.in-place-edit li { width: 150px; margin: 0px; padding: 3px; }
+
+        ul.in-place-edit .field {
+          width: 99%;
+        }
+
+        
+      .hover { background: #727EA3; color: #FFF; }
+      .editing { background: white; border-top: 5px solid #ccc; }
+      .disabled { background: none; color: black; }
+
+      .buttons input {
+        font-size: 10px;
+      }
+      
+    &lt;/style&gt;
+  </code>
+</pre>
+
+That's all there is. You're now ready to start using the plugin.
+
+.h2 Basic Usage
+
+There are three additional steps involved in getting the plugin to work:
+
+* Adding in-place-edit elements to your HTML
+* Loading the in-place-edit plugin
+* Defining event handlers
+
+.h3 Adding in-place-edit elements to your HTML
+
+In this example we'll use a paragraph:
+
+<pre>
+  <code>
+      &lt;div class="in-place-edit"&gt;
+        &lt;p id="item-1"&gt;Do the dishes&lt;/p&gt;
+      &lt;/div&gt;
+  </code>
+</pre>
+
+Remember to set the id to something unique, for example a database ID. This way you can identify which database record you need to update.
+
+
+.h3 Loading the in-place-edit plugin
+
+Now you need to tell the plugin which DOM elements you want it to add the in-place-edit behavior to. This is done with jQuery selectors and a call to the inPlaceEdit method, as shown in this example:
+
+<pre>
+  <code>
+    // Enable in-place-edit when document is loaded
+    $(document).ready(function(){
+
+      $(".in-place-edit").children().inPlaceEdit({
+        submit : submit_handler,
+        cancel : cancel_handler
+      });            
+    });
+  </code>
+</pre>
+
+
+.h3 Defining event handlers
+
+Note that earlier we defined two event handlers in the document onload handler: submit and cancel. I think you can guess what they do, so I won't explain...
+
+The last step is to add the following code above the document onload handler:
+
+<pre>
+  <code>
+      var submit_handler = function(element, id, value) {
+          alert("Edited id '" + id + "' value '" + value + "'");
+          return true;
+      };
+
+      var cancel_handler = function(element) {
+          // Nothing
+          return true;
+      };
+  </code>
+</pre>
+
+Task complete. Test in your browser or have a look at "this example's code":basic-example.html.
