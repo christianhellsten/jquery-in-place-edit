@@ -11,9 +11,9 @@ h3. Features
 * Callbacks that allow you to add and change the default behavior.
 * Lightweight and easy to understand: allows you to modify it to fit your needs.
 
-.h2 Installation
+h2. Installation
 
-.h3 JavaScript
+h3. JavaScript
 
 Inside the head tag, first include the jQuery JavaScript file then the jQuery in-place-edit file:
 
@@ -24,7 +24,7 @@ Inside the head tag, first include the jQuery JavaScript file then the jQuery in
   </code>
 </pre>
 
-.h3 CSS
+h3. CSS
 
 Add the following styles to your CSS file; you can change them later:
 
@@ -53,7 +53,7 @@ Add the following styles to your CSS file; you can change them later:
 
 That's all there is. You're now ready to start using the plugin.
 
-.h2 Basic Usage
+h2. Basic Usage
 
 There are three additional steps involved in getting the plugin to work:
 
@@ -61,7 +61,7 @@ There are three additional steps involved in getting the plugin to work:
 * Loading the in-place-edit plugin
 * Defining event handlers
 
-.h3 Adding in-place-edit elements to your HTML
+h3. Adding in-place-edit elements to your HTML
 
 In this example we'll use a paragraph:
 
@@ -76,7 +76,7 @@ In this example we'll use a paragraph:
 Remember to set the id to something unique, for example a database ID. This way you can identify which database record you need to update.
 
 
-.h3 Loading the in-place-edit plugin
+h3. Loading the in-place-edit plugin
 
 Now you need to tell the plugin which DOM elements you want it to add the in-place-edit behavior to. This is done with jQuery selectors and a call to the inPlaceEdit method, as shown in this example:
 
@@ -94,7 +94,7 @@ Now you need to tell the plugin which DOM elements you want it to add the in-pla
 </pre>
 
 
-.h3 Defining event handlers
+h3. Defining event handlers
 
 Note that earlier we defined two event handlers in the document onload handler: submit and cancel. I think you can guess what they do, so I won't explain...
 
@@ -114,4 +114,4 @@ The last step is to add the following code above the document onload handler:
   </code>
 </pre>
 
-Task complete. Test in your browser or have a look at "this example's code":basic-example.html.
+Task complete. Test in your browser or have a look at "this example's code":http://github.com/christianhellsten/jquery-in-place-edit/tree/master/basic-example.html.
