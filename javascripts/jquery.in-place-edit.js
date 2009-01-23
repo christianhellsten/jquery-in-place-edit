@@ -54,9 +54,9 @@
           form_template.appendTo(element);          // Clone event handlers too
         }
 
+        $('.field', element).val(element.old_html); // Set field value to old HTML
         $('.field', element).focus();               // Set focus to input field
         $('.field', element).select();              // Select all text in field
-        $('.field', element).val(element.old_html); // Set field value to old HTML
         
         // On blur: cancel action
         if(settings.onBlurDisabled == false) {
