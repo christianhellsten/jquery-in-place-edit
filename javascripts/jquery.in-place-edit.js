@@ -20,6 +20,7 @@
 *  Linux:    Firefox 2, Firefox 3, Opera
 *  Mac:      Firefox 2, Firefox 3, Opera
 *
+*
 * Licensed under the MIT license:
 * http://www.opensource.org/licenses/mit-license.php
 *
